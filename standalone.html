@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://unpkg.com/vtk.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script type="text/javascript">
+
+			const container = document.querySelector('#container');
+
+			// VTK renderWindow/renderer
+			const renderWindow = vtk.Rendering.Core.vtkRenderWindow.newInstance();
+			const renderer     = vtk.Rendering.Core.vtkRenderer.newInstance();
+			renderWindow.addRenderer(renderer);
+
+			// WebGL/OpenGL impl
+			const openGLRenderWindow = vtk.Rendering.OpenGL.vtkRenderWindow.newInstance();
+			openGLRenderWindow.setContainer(container);
+			openGLRenderWindow.setSize(1000, 1000);
+			renderWindow.addView(openGLRenderWindow);
+
+			// Interactor
+			const interactor = vtk.Rendering.Core.vtkRenderWindowInteractor.newInstance();
+			interactor.setView(openGLRenderWindow);
+			interactor.initialize();
+			interactor.bindEvents(container);
+
+			// Interactor style
+			const trackball = vtk.Interaction.Style.vtkInteractorStyleTrackballCamera.newInstance();
+			interactor.setInteractorStyle(trackball);
+
+			// Pipeline
+			const cone   = vtk.Filters.Sources.vtkConeSource.newInstance();
+			const actor  = vtk.Rendering.Core.vtkActor.newInstance();
+			const mapper = vtk.Rendering.Core.vtkMapper.newInstance();
+
+			actor.setMapper(mapper);
+			mapper.setInputConnection(cone.getOutputPort());
+			renderer.addActor(actor);
+
+			// Render
+			renderer.resetCamera();
+			renderWindow.render(); 
+
+		</script>
+	</body>
+</html>
+
