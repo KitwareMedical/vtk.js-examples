@@ -16,7 +16,9 @@
   "author": "",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "kw-web-suite": "^8.0.0",
     "vtk.js": "^11.1.3"
+  },
+  "devDependencies": {
+    "kw-web-suite": "^8.0.0"
   }
 }
