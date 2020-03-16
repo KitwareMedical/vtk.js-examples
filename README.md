@@ -20,7 +20,12 @@ There are a few examples in this repo. They are listed below:
 
 For `standalone.html`, no build instructions are required. Just load it up in your browser!
 
-For the rest of the examples, they can be built as follows:
+For the rest of the examples, you first must install the npm packages by running the following:
+```
+npm install
+```
+
+Once you've run that, you can now run one of the example projects:
 - `npm run dev:cone`
 - `npm run dev:cone-filter`
 - `npm run dev:volume`

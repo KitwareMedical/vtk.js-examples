@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack-dev-server --mode=production --progress",
-    "dev": "webpack-dev-server --mode=development",
+    "build": "echo Please look at README.md for examples that you can build.",
+    "dev": "echo Please look at README.md for examples that you can build.",
     "dev:cone": "EXAMPLE=cone.js webpack-dev-server --mode=development",
     "dev:cone-filter": "EXAMPLE=cone-filter.js webpack-dev-server --mode=development",
     "dev:volume": "EXAMPLE=volume.js webpack-dev-server --mode=development",
