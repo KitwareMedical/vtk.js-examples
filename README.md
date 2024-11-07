@@ -1,3 +1,8 @@
+> [!CAUTION]
+> This repository is no longer maintained. As such, there is no guarantee that the examples will run with the latest version of vtk.js and/or nodejs. The code will be left here for reference.
+>
+> To see up-to-date examples, visit [the vtk.js examples page](https://kitware.github.io/vtk-js/examples/). The examples in this repo are mostly based on examples in the vtk.js repo.
+
 # VTK.js examples
 
 This repository contains VTK.js examples used in the VTK.js+OHIF tutorials. A
